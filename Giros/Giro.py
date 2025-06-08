@@ -4,7 +4,7 @@ import sys
 import random
 
 # Configurações da rede
-UDP_IP = "192.168.61.2"
+UDP_IP = "192.168.123.2"
 UDP_PORT = 5005
 
 # Inicia o socket UDP
