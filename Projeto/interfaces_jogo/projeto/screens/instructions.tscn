@@ -1,0 +1,159 @@
+[gd_scene load_steps=10 format=3 uid="uid://buu4gna2k6bk8"]
+
+[ext_resource type="Script" uid="uid://dce1qgevwjusk" path="res://screens/instructions.gd" id="1_veb71"]
+[ext_resource type="Texture2D" uid="uid://brb4p3radv7q4" path="res://assets/peixe.png" id="2_anepk"]
+[ext_resource type="Texture2D" uid="uid://d3ha7hg5gbsw3" path="res://screens/right.png" id="3_0mubo"]
+[ext_resource type="Texture2D" uid="uid://nsyd4fcmeqdb" path="res://assets/Key.png" id="3_ofqdu"]
+[ext_resource type="Texture2D" uid="uid://dvv5ca0pm1oks" path="res://screens/left.png" id="4_hqno0"]
+[ext_resource type="Texture2D" uid="uid://r15k44xnvsts" path="res://level/backgrounds/Fundo_Instrucao.png" id="4_iwkrg"]
+[ext_resource type="Texture2D" uid="uid://dlog4hpgmmff1" path="res://power-ups/paw_cat_double_jump.png" id="5_c8p6g"]
+[ext_resource type="Texture2D" uid="uid://c4uekqcuo0uyy" path="res://screens/space.png" id="5_gc2t6"]
+[ext_resource type="Texture2D" uid="uid://btcnm72karc7l" path="res://power-ups/slow_fall.png" id="6_yfnyr"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_veb71")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = -2.0
+offset_right = 768.0
+offset_bottom = 766.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.33336, 0.753571)
+texture = ExtResource("4_iwkrg")
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 94.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 20
+text = "Voltar
+"
+
+[node name="ControlsLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 64.0
+offset_right = 545.0
+offset_bottom = 264.0
+theme_override_font_sizes/font_size = 20
+text = "Controles:
+
+  			 Direcionar o pulo para direita             
+
+   Direcionar o pulo para esquerda        
+
+   Pular                                                 "
+
+[node name="Right" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 112.0
+offset_right = 432.0
+offset_bottom = 144.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_0mubo")
+
+[node name="Left" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 168.0
+offset_right = 432.0
+offset_bottom = 200.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_hqno0")
+
+[node name="Space" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 224.0
+offset_right = 432.0
+offset_bottom = 256.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_gc2t6")
+
+[node name="LabelChave" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 356.0
+offset_right = 408.0
+offset_bottom = 411.0
+theme_override_font_sizes/font_size = 18
+text = "Chave : Permite ao jogador abrir janelas, 
+assim pulando partes do nível."
+
+[node name="Chave" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 418.0
+offset_right = 224.0
+offset_bottom = 450.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_ofqdu")
+
+[node name="FishLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 470.0
+offset_right = 432.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 18
+text = "Peixe: Concede Score ao jogador"
+
+[node name="Fish" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 500.0
+offset_right = 224.0
+offset_bottom = 532.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_anepk")
+
+[node name="DoubleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 356.0
+offset_right = 967.0
+offset_bottom = 382.0
+scale = Vector2(1, 1.10865)
+theme_override_font_sizes/font_size = 18
+text = "Double Jump: Recarregar o pulo no ar"
+
+[node name="DoubleJump" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 384.0
+offset_right = 793.0
+offset_bottom = 416.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_c8p6g")
+
+[node name="SlowFallLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 470.0
+offset_right = 985.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 18
+text = "Slow Fall: Deixa a queda 50% mais lenta"
+
+[node name="SlowFall" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 500.0
+offset_right = 800.0
+offset_bottom = 532.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_yfnyr")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

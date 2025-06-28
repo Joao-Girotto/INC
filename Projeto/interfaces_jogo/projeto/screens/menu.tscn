@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm4fotn0thrt"]
+
+[ext_resource type="Script" uid="uid://cvw20oqwmbja2" path="res://screens/menu.gd" id="1_f18a8"]
+[ext_resource type="FontFile" uid="uid://bejpc4j7ug61j" path="res://assets/PublicPixel.ttf" id="2_b6p6n"]
+[ext_resource type="Texture2D" uid="uid://gjqumuq6txsv" path="res://level/backgrounds/Fundo2.0.png" id="2_ldinp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hc1d"]
+content_margin_left = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0, 0, 0, 0.431373)
+shadow_size = 1
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f18a8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 576.0
+offset_bottom = 310.0
+scale = Vector2(0.998758, 0.5603)
+texture = ExtResource("2_ldinp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 20
+
+[node name="MainContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="GameName" type="Label" parent="MarginContainer/MainContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b6p6n")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hc1d")
+text = "Cat King"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MainContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b6p6n")
+theme_override_font_sizes/font_size = 24
+text = "Iniciar"
+
+[node name="instructionsButton2" type="Button" parent="MarginContainer/MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b6p6n")
+theme_override_font_sizes/font_size = 24
+text = "Instruções
+"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b6p6n")
+theme_override_font_sizes/font_size = 24
+text = "Creditos
+"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b6p6n")
+theme_override_font_sizes/font_size = 24
+text = "Sair"
+
+[connection signal="pressed" from="MarginContainer/MainContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MainContainer/HBoxContainer/VBoxContainer/instructionsButton2" to="." method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MainContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MainContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

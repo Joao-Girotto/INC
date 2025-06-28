@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr4y4vmuqs27p"]
+
+[ext_resource type="Script" uid="uid://kbui1275ugla" path="res://power-ups/slow_fall.gd" id="1_wgltd"]
+[ext_resource type="Texture2D" uid="uid://btcnm72karc7l" path="res://power-ups/slow_fall.png" id="2_j7fgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw6bh"]
+size = Vector2(32, 25)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_wgltd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j7fgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fw6bh")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

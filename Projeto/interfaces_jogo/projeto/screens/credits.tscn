@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjecvp1vu2tl"]
+
+[ext_resource type="Script" uid="uid://cy80shasfbtbb" path="res://screens/credits.gd" id="1_85iwd"]
+[ext_resource type="Texture2D" uid="uid://b0o3taco2s7hg" path="res://level/backgrounds/TelaFinal.png" id="1_fdfnt"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_85iwd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.0588235, 0.301961, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fdfnt")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 100.0
+offset_right = 559.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 28
+text = "Código"
+
+[node name="NamesLabel1" type="Label" parent="."]
+offset_left = 358.0
+offset_top = 140.0
+offset_right = 666.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 20
+text = "     Gulherme Augusto Maturana
+     Marcos Vinicius de Quadros"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 483.0
+offset_top = 230.0
+offset_right = 541.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 28
+text = "Arte
+"
+
+[node name="NamesLabel2" type="Label" parent="."]
+offset_left = 428.5
+offset_top = 270.0
+offset_right = 597.5
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 20
+text = "João Vitor Girotto"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 396.0
+offset_top = 330.0
+offset_right = 628.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 28
+text = "Musicas e Efeitos"
+
+[node name="NamesLabel3" type="Label" parent="."]
+offset_left = 228.5
+offset_top = 370.0
+offset_right = 795.5
+offset_bottom = 522.0
+theme_override_font_sizes/font_size = 20
+text = "Happy Adventure  by TinyWorlds - OpenGameArt.org
+TalkingCuteChiptune by Pro Sensosory - OpenGameArt.org
+jumping by Leszek_Szary - freesound.org
+Item receiving by Raclure - freesounds.org
+     "
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 94.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 20
+text = "Voltar
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

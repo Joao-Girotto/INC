@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8wrjjuqr5e1k"]
+
+[ext_resource type="Script" uid="uid://bfcewuf47dg2i" path="res://power-ups/double_jump.gd" id="1_amigy"]
+[ext_resource type="Texture2D" uid="uid://dlog4hpgmmff1" path="res://power-ups/paw_cat_double_jump.png" id="2_xhrpc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11wxj"]
+size = Vector2(32, 36)
+
+[node name="double_jump" type="Area2D"]
+z_index = 1
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_amigy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_xhrpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_11wxj")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

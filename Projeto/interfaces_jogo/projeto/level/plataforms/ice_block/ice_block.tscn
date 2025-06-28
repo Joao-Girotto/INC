@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu7d8wocathmn"]
+
+[ext_resource type="Script" uid="uid://be0v1nsihxbjx" path="res://level/plataforms/ice_block/ice_block.gd" id="1_lunqe"]
+[ext_resource type="Texture2D" uid="uid://cmvhgxhnw2j60" path="res://level/plataforms/ice_block/Iced_Bloco.png" id="2_p54jt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogflb"]
+size = Vector2(32, 32)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" groups=["Ice"]]
+script = ExtResource("1_lunqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p54jt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ogflb")

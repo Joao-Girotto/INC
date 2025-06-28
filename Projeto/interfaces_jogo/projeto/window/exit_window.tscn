@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr3fed834ajjb"]
+
+[ext_resource type="Script" uid="uid://bt8jeu4lavite" path="res://window/exit_window.gd" id="1_2lsqc"]
+[ext_resource type="Texture2D" uid="uid://cv7ot41wh0fda" path="res://window/JanelaBordaCompleta.png" id="1_sr8ec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmnlu"]
+size = Vector2(48, 64)
+
+[node name="exit_window" type="Area2D" groups=["window"]]
+z_index = -1
+position = Vector2(0, 16)
+script = ExtResource("1_2lsqc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1.5, 2)
+texture = ExtResource("1_sr8ec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nmnlu")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6j18q3d332qi"]
+
+[ext_resource type="Texture2D" uid="uid://cv7ot41wh0fda" path="res://window/JanelaBordaCompleta.png" id="1_7xjqj"]
+[ext_resource type="Script" uid="uid://di2ydv34bvutt" path="res://window/window.gd" id="1_vi6bk"]
+[ext_resource type="Texture2D" uid="uid://b7xjqs2xqicoa" path="res://window/Fechadura.png" id="2_qgjgl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jtf6"]
+size = Vector2(73.4659, 64)
+
+[node name="window" type="Area2D" groups=["window"]]
+z_index = -1
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("1_vi6bk")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 16)
+scale = Vector2(1.5, 2)
+texture = ExtResource("1_7xjqj")
+
+[node name="lock" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_qgjgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.0116717, 16)
+scale = Vector2(0.626459, 1)
+shape = SubResource("RectangleShape2D_5jtf6")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 8)
+scale = Vector2(0.4, 0.4)

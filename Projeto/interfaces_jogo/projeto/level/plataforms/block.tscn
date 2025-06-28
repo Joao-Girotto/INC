@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://kfgkevy6fhr7"]
+
+[sub_resource type="Resource" id="Resource_6chyo"]
+metadata/__load_path__ = "res://level/block.png"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fu7e"]
+size = Vector2(32, 32)
+
+[node name="Block" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("Resource_6chyo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1fu7e")

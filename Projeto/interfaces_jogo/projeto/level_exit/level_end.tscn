@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct67etgy6graa"]
+
+[ext_resource type="Script" uid="uid://duccrrndykl1l" path="res://level_exit/level_end.gd" id="1_i5dhs"]
+[ext_resource type="Texture2D" uid="uid://dto5qbcqxqfyt" path="res://level_exit/level_exit.png" id="1_tnrpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfb83"]
+size = Vector2(64, 56)
+
+[node name="LevelEnd" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_i5dhs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tnrpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_lfb83")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

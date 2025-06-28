@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj6iqylbf5eyo"]
+
+[ext_resource type="AudioStream" uid="uid://duparn05y8pjj" path="res://sounds/TalkingCuteChiptune.mp3" id="1_34np3"]
+[ext_resource type="Script" uid="uid://cd1t5u4upwqbw" path="res://sounds/node_2d.gd" id="1_su4vj"]
+
+[node name="MusicController" type="Node2D"]
+script = ExtResource("1_su4vj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_34np3")
+volume_db = -30.0
